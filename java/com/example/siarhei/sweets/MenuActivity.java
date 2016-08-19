@@ -26,9 +26,9 @@ public class MenuActivity extends Activity{
     }
 
     private void addSwets(){
-        sweets.add(new Sweet(getResources().getString(R.string.swBall),2,R.drawable.sweet1,"Info"));
-        sweets.add(new Sweet(getResources().getString(R.string.swWhite),2,R.drawable.cho3,"Info"));
-        sweets.add(new Sweet(getResources().getString(R.string.swChocolate),10,R.drawable.chocolate,"Info"));
+        sweets.add(new Sweet(getResources().getString(R.string.swBall),2,R.drawable.sweet1,R.raw.blackcho));
+        sweets.add(new Sweet(getResources().getString(R.string.swWhite),2,R.drawable.cho3,R.raw.choball));
+        sweets.add(new Sweet(getResources().getString(R.string.swChocolate),10,R.drawable.chocolate,R.raw.whitecho));
     }
 
     private void populateListView() {
@@ -46,6 +46,7 @@ public class MenuActivity extends Activity{
 
                 Sweet clickedSweet = sweets.get(position);
                 Intent intent = new Intent(MenuActivity.this, ShowActivity.class);
+                intent.putExtra("clickedSweet",clickedSweet);
                 startActivity(intent);
             }
         });

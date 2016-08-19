@@ -1,15 +1,16 @@
 package com.example.siarhei.sweets;
 
-/**
- * Created by Siarhei on 18.08.2016.
- */
-public class Sweet{
+import java.io.Serializable;
+
+
+public class Sweet implements Serializable{
+
     private String name;
     private int price;
     private int iconId;
-    private String extraInfo;
+    private int extraInfo;
 
-    public Sweet(String name, int price, int iconId, String extraInfo) {
+    public Sweet(String name, int price, int iconId, int extraInfo) {
         this.name = name;
         this.price = price;
         this.iconId = iconId;
@@ -28,7 +29,7 @@ public class Sweet{
         return iconId;
     }
 
-    public String getExtraInfo() {
+    public int getExtraInfo() {
         return extraInfo;
     }
 }

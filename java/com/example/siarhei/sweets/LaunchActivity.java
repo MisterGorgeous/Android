@@ -15,8 +15,8 @@ public class LaunchActivity extends Activity {
 
     }
 
-   /* public void goToMainAcriviry(View view){
-        Intent intent = new Intent(this,.class);
+    /*public void goToMainAcriviry(View view){
+        Intent intent = new Intent(this, MenuActivity.class);
         startActivity(intent);
     }*/
 }

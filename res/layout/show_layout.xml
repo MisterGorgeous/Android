@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			  android:orientation="vertical"
+			  android:layout_width="match_parent"
+			  android:layout_height="match_parent">
+
+	<ImageView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/extraPict"
+			android:layout_toRightOf="@+id/extraBack" android:layout_toEndOf="@+id/extraBack"
+			android:layout_weight="3.43"/>
+	<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="181dp">
+		<TextView
+				android:layout_width="281dp"
+				android:layout_height="113dp"
+				android:text=""
+				android:id="@+id/extraInfo"
+				android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
+				android:layout_alignParentBottom="true" android:layout_alignParentTop="true"/>
+		<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="New Text"
+				android:id="@+id/extraPrice"
+				android:layout_marginBottom="30dp" android:layout_alignParentBottom="true"
+				android:layout_toRightOf="@+id/extraInfo" android:layout_toEndOf="@+id/extraInfo"/>
+	</RelativeLayout>
+	<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="53dp">
+		<Button
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Back"
+				android:id="@+id/extraBack" android:layout_alignParentBottom="true" android:layout_alignParentLeft="true"
+				android:layout_alignParentStart="true" android:onClick="backToMenu"
+		/>
+		<Button
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Byu"
+				android:id="@+id/extraBuy" android:layout_alignParentBottom="true" android:layout_alignParentRight="true"
+				android:layout_alignParentEnd="true" android:layout_gravity="right"/>
+	</RelativeLayout>
+</LinearLayout>
