@@ -9,14 +9,16 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
 
-        <activity android:name=".MenuActivity">
+        <activity android:name=".LaunchActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
             </intent-filter>
         </activity>
 
         <activity android:name=".ShowActivity"/>
-        <activity android:name=".LaunchActivity"/>
+        <activity android:name=".MenuActivity"/>
+        <activity android:name=".PurchaseActivity"/>
+
 
     </application>
 

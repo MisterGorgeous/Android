@@ -31,7 +31,8 @@
 				android:src="@drawable/busket"
 				android:layout_alignParentTop="true" android:layout_alignParentRight="true"
 				android:layout_alignParentEnd="true"
-				android:baselineAlignBottom="false"/>
+				android:baselineAlignBottom="false" android:nestedScrollingEnabled="true"
+				android:onClick="goToPusrchase"/>
 	</RelativeLayout>
 	<ListView
 			android:layout_width="match_parent"

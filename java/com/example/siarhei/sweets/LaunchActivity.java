@@ -12,11 +12,11 @@ public class LaunchActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
        setContentView(R.layout.launch_layout);
-
+        goToMainAcriviry();
     }
 
-    /*public void goToMainAcriviry(View view){
+    public void goToMainAcriviry(){
         Intent intent = new Intent(this, MenuActivity.class);
         startActivity(intent);
-    }*/
+    }
 }

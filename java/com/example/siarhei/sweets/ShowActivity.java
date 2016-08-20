@@ -7,14 +7,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.example.siarhei.sweets.bd.BDSweets;
 
 import java.io.IOException;
 import java.io.InputStream;
 
 public class ShowActivity extends Activity {
-    //private Button buy;
-    private Button back;
-
+    private Sweet clickedSweet;
+    private BDSweets dbSweets;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +26,7 @@ public class ShowActivity extends Activity {
         ImageView image = (ImageView) findViewById(R.id.extraPict);
         TextView textView = (TextView) findViewById(R.id.extraInfo);
         TextView price = (TextView) findViewById(R.id.extraPrice);
-        Sweet clickedSweet = (Sweet) intent.getSerializableExtra("clickedSweet");
+        clickedSweet = (Sweet) intent.getSerializableExtra("clickedSweet");
 
         image.setImageResource(clickedSweet.getIconId());
         price.setText(String.valueOf(clickedSweet.getPrice()));
@@ -50,4 +50,9 @@ public class ShowActivity extends Activity {
         Intent intent = new Intent(this,MenuActivity.class);
         startActivity(intent);
     }
+
+    public void putSweetInTheBusket(View view){
+
+    }
+
 }

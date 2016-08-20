@@ -41,8 +41,9 @@
 		<Button
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:text="Byu"
-				android:id="@+id/extraBuy" android:layout_alignParentBottom="true" android:layout_alignParentRight="true"
-				android:layout_alignParentEnd="true" android:layout_gravity="right"/>
+				android:text="In The Busket"
+				android:id="@+id/extraInTheBusket" android:layout_alignParentBottom="true" android:layout_alignParentRight="true"
+				android:layout_alignParentEnd="true" android:layout_gravity="right"
+				android:onClick="putSweetInTheBusket"/>
 	</RelativeLayout>
 </LinearLayout>

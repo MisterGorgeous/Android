@@ -6,18 +6,22 @@ import java.io.Serializable;
 public class Sweet implements Serializable{
 
     private String name;
-    private int price;
+    private float price;
     private int iconId;
     private int extraInfo;
+    private int tableIndex;
 
-    public Sweet(String name, int price, int iconId, int extraInfo) {
+
+
+    public Sweet(String name, float price, int iconId, int extraInfo, int tableIndex) {
         this.name = name;
         this.price = price;
         this.iconId = iconId;
         this.extraInfo = extraInfo;
+        this.tableIndex = tableIndex;
     }
 
-    public int getPrice() {
+    public float getPrice() {
         return price;
     }
 
@@ -31,5 +35,9 @@ public class Sweet implements Serializable{
 
     public int getExtraInfo() {
         return extraInfo;
+    }
+
+    public int getTableIndex() {
+        return tableIndex;
     }
 }
