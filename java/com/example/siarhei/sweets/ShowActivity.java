@@ -2,6 +2,7 @@ package com.example.siarhei.sweets;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -52,7 +53,10 @@ public class ShowActivity extends Activity {
     }
 
     public void putSweetInTheBusket(View view){
-
+        dbSweets = new BDSweets(this);
+        SQLiteDatabase db = dbSweets.getWritableDatabase();
+        dbSweets.addSweet(db,clickedSweet);
+        dbSweets.close();
     }
 
 }

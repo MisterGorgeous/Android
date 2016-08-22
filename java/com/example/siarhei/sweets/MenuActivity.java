@@ -7,7 +7,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.*;
 import com.example.siarhei.sweets.bd.BDSweets;
 import java.util.ArrayList;
@@ -37,6 +36,8 @@ public class MenuActivity extends Activity{
 
         dbSweets = new BDSweets(this);
         SQLiteDatabase db = dbSweets.getWritableDatabase();
+
+
         Cursor c =  db.query("assortiment", null, null, null, null, null, null);
 
         if (c.moveToFirst()) {
@@ -45,9 +46,10 @@ public class MenuActivity extends Activity{
             int iconIndex = c.getColumnIndex("icon");
             int infoIndex = c.getColumnIndex("info");
             int priceIndex = c.getColumnIndex("price");
+            int typeOfSweets = c.getColumnIndex("typesofsw");
 
             do {
-                sweets.add(new Sweet(c.getString(nameIndex),c.getFloat(priceIndex),c.getInt(iconIndex),c.getInt(infoIndex),c.getInt(idColIndex)));
+                sweets.add(new Sweet(c.getString(nameIndex),c.getFloat(priceIndex),c.getInt(iconIndex),c.getInt(infoIndex),c.getInt(idColIndex),c.getInt(typeOfSweets)));
             } while (c.moveToNext());
         } else
             Log.d(LOG_TAG, "0 rows");

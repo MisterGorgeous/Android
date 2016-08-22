@@ -12,13 +12,14 @@
         <activity android:name=".LaunchActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
 
         <activity android:name=".ShowActivity"/>
         <activity android:name=".MenuActivity"/>
         <activity android:name=".PurchaseActivity"/>
-
+        <activity android:name=".AutorizationActivity"/>
 
     </application>
 
