@@ -11,17 +11,23 @@ public class Sweet implements Serializable{
     private int extraInfo;
     private int tableIndex;
     private int typeOfSweet;
+    private int amount;
 
 
-
-    public Sweet(String name, float price, int iconId, int extraInfo, int tableIndex, int typeOfSweet) {
+    public Sweet(String name, float price, int iconId, int extraInfo, int tableIndex, int typeOfSweet, int amount) {
         this.name = name;
         this.price = price;
         this.iconId = iconId;
         this.extraInfo = extraInfo;
         this.tableIndex = tableIndex;
+
         this.typeOfSweet = typeOfSweet;
+        this.amount = amount;
     }
+
+    public int getAmount() { return amount; }
+
+    public void setAmount(int amount) { this.amount = amount; }
 
     public float getPrice() {
         return price;
@@ -44,4 +50,6 @@ public class Sweet implements Serializable{
     }
 
     public int getTypeOfSweet() {return typeOfSweet;}
+
+    public void setPrice(float price) { this.price = price; }
 }

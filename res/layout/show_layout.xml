@@ -9,24 +9,44 @@
 			android:layout_height="wrap_content"
 			android:id="@+id/extraPict"
 			android:layout_toRightOf="@+id/extraBack" android:layout_toEndOf="@+id/extraBack"
-			android:layout_weight="3.43"/>
+			android:layout_weight="0.13"/>
+	<TextView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text=""
+			android:id="@+id/extraInfo"
+			android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
+			android:layout_alignParentTop="true" android:layout_alignParentBottom="true" android:layout_weight="0.06"/>
 	<RelativeLayout
 			android:layout_width="match_parent"
-			android:layout_height="181dp">
-		<TextView
-				android:layout_width="281dp"
-				android:layout_height="113dp"
-				android:text=""
-				android:id="@+id/extraInfo"
-				android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
-				android:layout_alignParentBottom="true" android:layout_alignParentTop="true"/>
+			android:layout_height="53dp">
 		<TextView
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:text="New Text"
-				android:id="@+id/extraPrice"
-				android:layout_marginBottom="30dp" android:layout_alignParentBottom="true"
-				android:layout_toRightOf="@+id/extraInfo" android:layout_toEndOf="@+id/extraInfo"/>
+				android:text="= 0"
+				android:id="@+id/showTotal"
+				android:textColor="@color/colorRed"
+				android:layout_gravity="right" android:layout_weight="0.17"
+				android:layout_column="22"
+				android:layout_alignTop="@+id/showPrice" android:layout_toRightOf="@+id/amount"
+				android:layout_toEndOf="@+id/amount"/>
+		<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textAppearance="?android:attr/textAppearanceSmall"
+				android:text="2.0  * "
+				android:id="@+id/showPrice"
+				android:textColor="@color/colorRed"
+				android:layout_centerVertical="true" android:layout_toLeftOf="@+id/amount"
+				android:layout_toStartOf="@+id/amount"/>
+		<EditText
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:inputType="numberSigned"
+				android:ems="10"
+				android:id="@+id/amount"
+				android:text="           (количество)"
+				android:layout_alignParentTop="true" android:layout_centerHorizontal="true"/>
 	</RelativeLayout>
 	<RelativeLayout
 			android:layout_width="match_parent"
@@ -41,7 +61,7 @@
 		<Button
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:text="In The Busket"
+				android:text="В Корзину"
 				android:id="@+id/extraInTheBusket" android:layout_alignParentBottom="true" android:layout_alignParentRight="true"
 				android:layout_alignParentEnd="true" android:layout_gravity="right"
 				android:onClick="putSweetInTheBusket"/>

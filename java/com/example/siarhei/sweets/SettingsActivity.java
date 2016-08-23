@@ -32,13 +32,9 @@ public class SettingsActivity extends Activity {
     protected SQLiteDatabase db;
 
 
-    public SettingsActivity( int view, int listId, String[] queryParametrs, String[] tableColums, String[] whereArgs) {
+    public SettingsActivity( int view, int listId) {
         this.view = view;
         this.listId = listId;
-        this.queryParametrs = queryParametrs;
-        this.tableColums = tableColums;
-        this.whereArgs = whereArgs;
-
     }
 
 
@@ -57,6 +53,11 @@ public class SettingsActivity extends Activity {
         registerClickCallback();
     }
 
+    public void setQuery(String[] queryParametrs, String[] tableColums, String[] whereArgs){
+        this.queryParametrs = queryParametrs;
+        this.tableColums = tableColums;
+        this.whereArgs = whereArgs;
+    }
 
     protected List<Sweet> getSweets() { return sweets; }
     private void addSwets(){
@@ -75,9 +76,11 @@ public class SettingsActivity extends Activity {
             int infoIndex = c.getColumnIndex("info");
             int priceIndex = c.getColumnIndex("price");
             int typeOfSweets = c.getColumnIndex("typesofsw");
+            int amountOfSweets = c.getColumnIndex("amount");
 
             do {
-                sweets.add(new Sweet(c.getString(nameIndex),c.getFloat(priceIndex),c.getInt(iconIndex),c.getInt(infoIndex),c.getInt(idColIndex),c.getInt(typeOfSweets)));
+                sweets.add(new Sweet(c.getString(nameIndex),c.getFloat(priceIndex),c.getInt(iconIndex),
+                                     c.getInt(infoIndex),c.getInt(idColIndex),c.getInt(typeOfSweets),c.getInt(amountOfSweets)));
             } while (c.moveToNext());
         } else
             Log.d(LOG_TAG, "0 rows");

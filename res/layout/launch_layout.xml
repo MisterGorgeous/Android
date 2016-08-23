@@ -6,19 +6,11 @@
 			  android:background="@color/colorWhite">
 
 
-	<TextView
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:textAppearance="?android:attr/textAppearanceLarge"
-			android:text="Приносит Раость!"
-			android:id="@+id/textView"
-			android:textColor="@color/colorRed"
-			android:layout_gravity="center_horizontal" android:layout_weight="0.11"/>
 	<ImageView
-				android:layout_width="match_parent"
-				android:layout_height="307dp"
-				android:id="@+id/imageView"
-				android:src="@drawable/launcher"/>
+			android:layout_width="424dp"
+			android:layout_height="289dp"
+			android:id="@+id/imageView"
+			android:src="@drawable/launcher"/>
 
 </LinearLayout>
 

@@ -19,6 +19,7 @@ public class LaunchActivity extends Activity {
     }
 
     public void goToMainAcriviry(){
+        MenuActivity menuActivity = new MenuActivity();
         Intent intent = new Intent(this, MenuActivity.class);
         startActivity(intent);
     }

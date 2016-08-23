@@ -21,9 +21,11 @@ public class PurchaseActivity extends SettingsActivity {
 
 
     public PurchaseActivity() {
-        super(R.layout.purchase_layout, R.id.purchaselistView, new String[]{"selectedSweets",null,null,null,null},null, null);
+        super(R.layout.purchase_layout, R.id.purchaselistView);
+
         context = PurchaseActivity.this;
 
+        setQuery( new String[]{"selectedSweets",null,null,null,null},null, null);
     }
 
     @Override

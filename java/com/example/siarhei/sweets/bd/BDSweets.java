@@ -15,19 +15,18 @@ import java.util.List;
 public class BDSweets extends SQLiteOpenHelper {
 
     private static final String LOG_TAG = "sweetsLogs";
-    private List<Long> allSweets = new ArrayList<Long>();
     private List<Long> selectedSweets = new ArrayList<Long>();
 
 
     public BDSweets(Context context) {
-        super(context,"DB",null,8);
+        super(context,"DB",null,9);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
         Log.i(LOG_TAG, "--- onCreate database ---");
-        db.execSQL("create table assortiment(id integer primary key autoincrement, name text, icon integer, info integer, price real);");
-        db.execSQL("create table selectedSweets(id integer primary key autoincrement, name text, icon integer, info integer, price real);");
+      /*  db.execSQL("create table assortiment(id integer primary key autoincrement, name text, icon integer, info integer, price real);");
+        db.execSQL("create table selectedSweets(id integer primary key autoincrement, name text, icon integer, info integer, price real);");*/
     }
 
     @Override
@@ -46,12 +45,13 @@ public class BDSweets extends SQLiteOpenHelper {
         //db.execSQL("ALTER TABLE assortiment ADD FOREIGN KEY (P_id) REFERENCES typesOfSweets(id);");
        // db.execSQL("UPDATE assortiment SET typesofsw = 1 WHERE id < 4;");
        // db.execSQL("UPDATE assortiment SET typesofsw = 2 WHERE id >= 4; ");
-
-
+       /*db.execSQL("ALTER TABLE assortiment ADD amount int; ");
+       db.execSQL("ALTER TABLE selectedSweets ADD amount int; ");
+       db.execSQL("Update assortiment SET amount = 1; ");
+       db.execSQL("Update selectedSweets SET amount = 1; ");
+*/
     }
 
-
-    public List<Long> getAllSweets() { return allSweets; }
 
     public List<Long> getSelectedSweets() { return selectedSweets; }
 
@@ -63,12 +63,16 @@ public class BDSweets extends SQLiteOpenHelper {
 
     public void addSweet(SQLiteDatabase db, Sweet addedSweet){
         ContentValues cv = new ContentValues();
+
         cv.put("name",addedSweet.getName());
         cv.put("icon",addedSweet.getIconId());
         cv.put("info",addedSweet.getExtraInfo());
         cv.put("price",addedSweet.getPrice());
         cv.put("typesofsw",addedSweet.getTypeOfSweet());
+        cv.put("amount",addedSweet.getAmount());
+
         selectedSweets.add(db.insert("selectedSweets", null, cv));
+
         Log.i(LOG_TAG, ": Added.---------");
     }
 

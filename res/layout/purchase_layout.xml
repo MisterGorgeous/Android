@@ -27,7 +27,7 @@
 	</RelativeLayout>
 	<ListView
 			android:layout_width="match_parent"
-			android:layout_height="325dp"
+			android:layout_height="346dp"
 			android:id="@+id/purchaselistView" android:layout_gravity="center_horizontal"
 			android:divider="@color/colorRed"
 			android:listSelector="@color/colorYellow"/>
@@ -37,7 +37,7 @@
 		<Button
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:text="Buy"
+				android:text="Купить"
 				android:id="@+id/purchasebutton2"
 				android:layout_alignParentBottom="true" android:layout_alignRight="@+id/totalView"
 				android:layout_alignEnd="@+id/totalView" android:onClick="buy"/>
@@ -45,10 +45,10 @@
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:textAppearance="?android:attr/textAppearanceLarge"
-				android:text="Total: 0"
+				android:text="Сумма: 0"
 				android:id="@+id/totalView"
 				android:textColor="@color/colorRed"
-				android:layout_alignParentTop="true" android:layout_alignParentRight="true"
+				android:layout_above="@+id/purchasebutton2" android:layout_alignParentRight="true"
 				android:layout_alignParentEnd="true"/>
 		<Button
 				android:layout_width="wrap_content"
