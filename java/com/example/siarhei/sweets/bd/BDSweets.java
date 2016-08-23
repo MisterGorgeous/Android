@@ -44,8 +44,8 @@ public class BDSweets extends SQLiteOpenHelper {
         db.execSQL("create table selectedSweets(id integer primary key autoincrement, name text, icon integer, info integer, price real,typesofsw int,Constraint tys FOREIGN KEY ( typesofsw) REFERENCES typesOfSweets(cid));");
       //  db.execSQL("ALTER TABLE assortiment ADD Constraint typesofsw FOREIGN KEY (cid) REFERENCES typesOfSweets(cid)");*/
         //db.execSQL("ALTER TABLE assortiment ADD FOREIGN KEY (P_id) REFERENCES typesOfSweets(id);");
-        db.execSQL("UPDATE assortiment SET typesofsw = 1 WHERE id < 4;");
-        db.execSQL("UPDATE assortiment SET typesofsw = 2 WHERE id >= 4; ");
+       // db.execSQL("UPDATE assortiment SET typesofsw = 1 WHERE id < 4;");
+       // db.execSQL("UPDATE assortiment SET typesofsw = 2 WHERE id >= 4; ");
 
 
     }
@@ -68,7 +68,7 @@ public class BDSweets extends SQLiteOpenHelper {
         cv.put("info",addedSweet.getExtraInfo());
         cv.put("price",addedSweet.getPrice());
         cv.put("typesofsw",addedSweet.getTypeOfSweet());
-        selectedSweets.add(db.insert("assortiment", null, cv));
+        selectedSweets.add(db.insert("selectedSweets", null, cv));
         Log.i(LOG_TAG, ": Added.---------");
     }
 
