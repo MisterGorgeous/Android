@@ -2,15 +2,12 @@ package com.example.siarhei.sweets;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.os.Bundle;
-import android.util.Log;
+
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
-import com.example.siarhei.sweets.bd.BDSweets;
+
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -25,7 +22,19 @@ public class PurchaseActivity extends SettingsActivity {
 
         context = PurchaseActivity.this;
 
-        setQuery( new String[]{"selectedSweets",null,null,null,null},null, null);
+        setQuery(null);
+    }
+    @Override
+    public void setQuery(typesOfSweets clickedSweet){
+        this.queryParametrs =  new String[]{"selectedSweets",null,null,null,null};
+        this.tableColums = null;
+        this.whereArgs = null;
+       /* sweets = new ArrayList<Sweet>();
+        addSwets();
+
+        adapter = new MyListAdapter(context,sweets,list);
+        adapter.populateListView();
+        registerClickCallback();*/
     }
 
     @Override
@@ -42,7 +51,8 @@ public class PurchaseActivity extends SettingsActivity {
                 dbSweets.deleteSweet(db,clickedSweet.getTableIndex());
                 adapter.notifyDataSetChanged();
                 countTotal();
-
+               // dbSweets.close();
+               // db.close();
             }
         });
     }

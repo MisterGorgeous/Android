@@ -4,40 +4,10 @@
 			  android:layout_height="match_parent" android:orientation="vertical" android:weightSum="1">
 
 
-	<RelativeLayout
-			android:layout_width="match_parent"
-			android:layout_height="88dp">
-		<TextView
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:textAppearance="?android:attr/textAppearanceMedium"
-				android:text="Contact Number:+375445588454"
-				android:id="@+id/textView4"
-				android:layout_alignParentBottom="true" android:layout_alignParentRight="true"
-				android:layout_alignParentEnd="true"
-				android:linksClickable="true"
-				android:autoLink="all"/>
-		<Button
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:id="@+id/button"
-				android:text="Sign In"
-				android:layout_alignParentTop="true"
-				android:layout_above="@+id/textView4"/>
-		<ImageButton
-				android:layout_width="80dp"
-				android:layout_height="70dp"
-				android:id="@+id/imageButton"
-				android:src="@drawable/busket"
-				android:layout_alignParentTop="true" android:layout_alignParentRight="true"
-				android:layout_alignParentEnd="true"
-				android:baselineAlignBottom="false" android:nestedScrollingEnabled="true"
-				android:onClick="goToPusrchase"/>
-	</RelativeLayout>
 	<ListView
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
-			android:id="@+id/listView" android:layout_gravity="center_horizontal"
+			android:id="@+id/listView"
 			android:divider="@color/colorRed"
 			android:listSelector="@color/colorYellow"/>
 </LinearLayout>

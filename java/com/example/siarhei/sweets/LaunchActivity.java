@@ -13,14 +13,17 @@ public class LaunchActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-       setContentView(R.layout.launch_layout);
+      /* setContentView(R.layout.launch_layout);
         goToMainAcriviry();
-       SqlScoutServer.create(this, getPackageName());
+       SqlScoutServer.create(this, getPackageName());*/
     }
 
     public void goToMainAcriviry(){
-        MenuActivity menuActivity = new MenuActivity();
-        Intent intent = new Intent(this, MenuActivity.class);
+
+
+        Intent intent = new Intent(this, MainMenuActivity.class);
         startActivity(intent);
+       /*Intent intent = new Intent(this, MenuActivity.class);
+        startActivity(intent);*/
     }
 }

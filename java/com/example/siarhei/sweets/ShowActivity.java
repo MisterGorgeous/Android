@@ -95,7 +95,7 @@ public class ShowActivity extends Activity {
             clickedSweet.setPrice(currentAmount * clickedSweet.getPrice());
             dbSweets = new BDSweets(this);
             SQLiteDatabase db = dbSweets.getWritableDatabase();
-            dbSweets.addSweet(db, clickedSweet);
+            dbSweets.addSweetInDB(db, clickedSweet);
             dbSweets.close();
         }
     }

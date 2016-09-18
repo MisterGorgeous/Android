@@ -2,7 +2,6 @@ package com.example.siarhei.sweets;
 
 import java.io.Serializable;
 
-
 public class Sweet implements Serializable{
 
     private String name;
@@ -20,7 +19,6 @@ public class Sweet implements Serializable{
         this.iconId = iconId;
         this.extraInfo = extraInfo;
         this.tableIndex = tableIndex;
-
         this.typeOfSweet = typeOfSweet;
         this.amount = amount;
     }

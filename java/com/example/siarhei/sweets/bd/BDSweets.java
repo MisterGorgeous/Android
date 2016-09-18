@@ -11,15 +11,14 @@ import com.example.siarhei.sweets.Sweet;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class BDSweets extends SQLiteOpenHelper {
 
     private static final String LOG_TAG = "sweetsLogs";
     private List<Long> selectedSweets = new ArrayList<Long>();
 
-
     public BDSweets(Context context) {
         super(context,"DB",null,9);
+        Log.i(LOG_TAG, "--- DBConstructor database ---");
     }
 
     @Override
@@ -61,7 +60,7 @@ public class BDSweets extends SQLiteOpenHelper {
         Log.i(LOG_TAG,  ": Deleted.---------");
     }
 
-    public void addSweet(SQLiteDatabase db, Sweet addedSweet){
+    public void addSweetInDB(SQLiteDatabase db, Sweet addedSweet){
         ContentValues cv = new ContentValues();
 
         cv.put("name",addedSweet.getName());
