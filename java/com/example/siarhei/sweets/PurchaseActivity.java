@@ -3,6 +3,7 @@ package com.example.siarhei.sweets;
 import android.app.Activity;
 import android.content.Intent;
 
+import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -16,6 +17,7 @@ import java.util.List;
 
 public class PurchaseActivity extends SettingsActivity {
 
+    private ArrayList<Sweet> sweets;
 
     public PurchaseActivity() {
         super(R.layout.purchase_layout, R.id.purchaselistView);
@@ -24,6 +26,18 @@ public class PurchaseActivity extends SettingsActivity {
 
         setQuery(null);
     }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        sweets = new ArrayList<Sweet>();
+        addSwets(sweets);
+
+        adapter = new MyListAdapter(context,sweets,list);
+        adapter.populateListView();
+        registerClickCallback();
+    }
+
     @Override
     public void setQuery(typesOfSweets clickedSweet){
         this.queryParametrs =  new String[]{"selectedSweets",null,null,null,null};
@@ -45,9 +59,8 @@ public class PurchaseActivity extends SettingsActivity {
             public void onItemClick(AdapterView<?> parent, View viewClicked,
                                     int position, long id) {
 
-                List<Sweet> selectedSweets = getSweets();
-                Sweet clickedSweet = selectedSweets.get(position);
-                selectedSweets.remove(clickedSweet);
+                Sweet clickedSweet = sweets.get(position);
+                sweets.remove(clickedSweet);
                 dbSweets.deleteSweet(db,clickedSweet.getTableIndex());
                 adapter.notifyDataSetChanged();
                 countTotal();
@@ -70,7 +83,6 @@ public class PurchaseActivity extends SettingsActivity {
     @Override
     protected void countTotal() {
         float res = 0;
-        List<Sweet> sweets = getSweets();
 
         if(!sweets.isEmpty()){
             Iterator<Sweet> sweetsList = sweets.iterator();

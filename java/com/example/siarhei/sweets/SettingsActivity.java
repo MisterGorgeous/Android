@@ -18,7 +18,7 @@ import android.app.Activity;
 public abstract class SettingsActivity extends Activity {
 
     private static final String LOG_TAG = "logs:Settings ->";
-    protected List<Sweet> sweets;
+
     protected BDSweets dbSweets;
     protected ListView list;
     protected MyListAdapter adapter;
@@ -43,23 +43,15 @@ public abstract class SettingsActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(view);
         list = (ListView) findViewById(listId);
-
-        sweets = new ArrayList<Sweet>();
-        addSwets();
-
-        adapter = new MyListAdapter(context,sweets,list);
-        adapter.populateListView();
-        registerClickCallback();
-
     }
 
 
 
 
 
-    protected List<Sweet> getSweets() { return sweets; }
+    //protected List<Sweet> getSweets() { return sweets; }
 
-    protected void addSwets(){
+    protected void addSwets(List<Sweet> sweets){
 
         dbSweets = new BDSweets(this);
         db = dbSweets.getWritableDatabase();
